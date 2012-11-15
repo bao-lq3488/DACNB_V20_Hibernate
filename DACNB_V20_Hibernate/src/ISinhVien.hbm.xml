@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 15, 2012 8:57:01 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="ISinhVien" table="ISINHVIEN" abstract="true">
+        <id name="iDsv" type="java.lang.String">
+            <column name="IDSV" />
+            <generator class="assigned" />
+        </id>
+        <property name="tensv" type="java.lang.String">
+            <column name="TENSV" />
+        </property>
+        <property name="diaChisv" type="java.lang.String">
+            <column name="DIACHISV" />
+        </property>
+        <property name="ngaySinhsv" type="java.lang.String">
+            <column name="NGAYSINHSV" />
+        </property>
+        <property name="nienKhoasv" type="java.lang.String">
+            <column name="NIENKHOASV" />
+        </property>
+        <property name="tinhTrang" type="java.lang.String">
+            <column name="TINHTRANG" />
+        </property>
+    </class>
+</hibernate-mapping>
