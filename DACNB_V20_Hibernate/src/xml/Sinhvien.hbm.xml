@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2012 11:25:25 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Sinhvien" table="SINHVIEN">
+        <id name="idsinhvien" type="string">
+            <column name="IDSINHVIEN" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="lop" class="Lop" fetch="select">
+            <column name="IDLOP" length="10" />
+        </many-to-one>
+        <property name="tensinhvien" type="string">
+            <column name="TENSINHVIEN" length="50" />
+        </property>
+        <property name="ngaysinh" type="date">
+            <column name="NGAYSINH" length="7" />
+        </property>
+        <property name="diachi" type="string">
+            <column name="DIACHI" length="200" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="50" />
+        </property>
+        <property name="datejoin" type="string">
+            <column name="DATEJOIN" length="5" />
+        </property>
+        <property name="dateend" type="string">
+            <column name="DATEEND" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>

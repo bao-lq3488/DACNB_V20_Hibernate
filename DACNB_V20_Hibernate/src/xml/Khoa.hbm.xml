@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2012 11:25:25 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Khoa" table="KHOA">
+        <id name="idkhoa" type="string">
+            <column name="IDKHOA" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="tenkhoa" type="string">
+            <column name="TENKHOA" length="50" />
+        </property>
+        <set name="lops" table="LOP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDKHOA" length="10" />
+            </key>
+            <one-to-many class="Lop" />
+        </set>
+    </class>
+</hibernate-mapping>

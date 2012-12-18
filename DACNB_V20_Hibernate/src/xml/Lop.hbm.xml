@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2012 11:25:25 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Lop" table="LOP">
+        <id name="idlop" type="string">
+            <column name="IDLOP" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="khoa" class="Khoa" fetch="select">
+            <column name="IDKHOA" length="10" />
+        </many-to-one>
+        <property name="tenlop" type="string">
+            <column name="TENLOP" length="50" />
+        </property>
+        <set name="sinhviens" table="SINHVIEN" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDLOP" length="10" />
+            </key>
+            <one-to-many class="Sinhvien" />
+        </set>
+    </class>
+</hibernate-mapping>
